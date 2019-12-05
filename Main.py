@@ -1,6 +1,5 @@
 import chess
 import chess.svg
-import jupyter
 
 board = chess.Board()
 
@@ -8,10 +7,29 @@ print(board.legal_moves)
 
 print(board)
 
-board.push_san("e4")
+board.push_san("Nf3")
+print(board)
+
+board.push_san("a6")
+print(board)
+
+board.push_san("e3")
+print(board)
+
+board.push_san("a5")
 print(board)
 
 
-chess.svg.piece(chess.Piece.from_symbol("R"))
+board.push_san("Bd3")
+print(board)
 
-chess.svg.board(board=board)
+board.push_san("a4")
+print(board)
+
+board.push_san("O-O")
+print(board)
+
+board.push_san("a3")
+print(board)
+
+print(board.legal_moves)
