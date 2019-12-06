@@ -1,0 +1,26 @@
+#ABNF 1.0;
+language pl-pl;
+mode voice;
+root $root;
+tag-format <semantics/1.0-literals>;
+
+$root = $komenda <1-6>|
+        $ruch <1-4>;
+
+$figura = król {K}| hetman {H}| wieża {W}| goniec {G}| skoczek {S}| pion { };
+$kolumna = A|B|C|D|E|F|G|H;
+$rząd = jeden {1}| dwa {2}| trzy {3}| cztery {4}| pięć {5}| sześć {6}|siedem {7}| osiem {8};
+
+$ruch = $figura na $kolumna $rząd|
+        $figura z $kolumna na $kolumna $rząd|
+        $figura z $rząd na $kolumna $rząd;
+
+$komenda = rozpocznij grę|
+           poddaj|
+           zaproponuj remis|
+           zgadzam się|
+           na pewno;
+
+
+
+
