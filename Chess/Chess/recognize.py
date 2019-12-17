@@ -214,5 +214,7 @@ def make_move_from_speech(transcript, board):
         except UnboundLocalError:
             #print("1: nie wykryto prawidlowego ruchu \nproszę spróbować ponownie")
             return -1
+        except ValueError:
+            return -1
     #print("2: nie wykryto prawidłowego ruchu \nproszę spróbować ponownie")
     return -1
