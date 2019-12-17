@@ -91,15 +91,20 @@ def make_move_from_speech(transcript, board):
     # reakcja na słowo 'roszada'
     rosz = 0
     rosz = re.search(r'roszada', transcript)
-    if rosz != 0:
-        try:
-            return board.parse_san('O-O-O')
-        except ValueError:
-            pass
-        try:
-            return board.parse_san('O-O')
-        except ValueError:
-            return -1
+    #print(rosz)
+    try:
+        if rosz.group(0) == 'roszada':
+            try:
+                return board.parse_san('O-O-O')
+            except ValueError:
+                pass
+            try:
+                return board.parse_san('O-O')
+            except ValueError:
+                print('nie można wykonać roszady')
+                return -1
+    except AttributeError:
+        pass
 
     command = re.split('na', transcript)
 
@@ -120,8 +125,12 @@ def make_move_from_speech(transcript, board):
         figure = re.search(figures_name[i], command[0])
         try:
             prom_fig = re.search(figures_name, promotion[1])
+            prom_fig = prom_fig.group(0)
             prom_fig = figures_sign[i]
         except IndexError:
+            prom_fig = 0
+            pass
+        except AttributeError:
             pass
         try:
             #print(figure.group(0))
