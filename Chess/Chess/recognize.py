@@ -73,7 +73,7 @@ def make_move_from_speech(transcript, board):
 
     reacts both on figure names (if exact) or coordinates
     roszada (O-O)/(O-O-O): reacts on 'roszada' word. If both are legal return long first (O-O-O)
-    promotion: search figure name after 'promocja' word. 
+    promotion: search figure name after 'promocja' word.
     """
 
     figures_name = [r'kr[óo]la?', r'dam[ay]', r'hetmana?', r'kr[óo]low[aą]', r'goniec', r'laufe?ra?', r'k?o[ńn]i?e?',
@@ -85,7 +85,7 @@ def make_move_from_speech(transcript, board):
     for i in range(1,9):
         numax.append(str(i))
 
-    regularICAO = [r'alfa', r'brav?w?o', r'c?z?h?arlie?', r'delta', r'ec?ho', r'fox?k?s?trot?', r'golf', r'hotel?']
+    regularICAO = [r'alfa', r'bra[vw]o', r'c[zh]ar[ln][iy]e?', r'delta', r'ec?ho', r'fox?k?s?trot?', r'golf?', r'hotel?']
     letterax = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 
     # reakcja na słowo 'roszada'
@@ -165,7 +165,7 @@ def make_move_from_speech(transcript, board):
                     else:
                         move = f + letSecond + numSecond
                 else:
-                    move = letSecond + numSecond + prom_fig
+                    move = letSecond + numSecond + '=' + prom_fig
 
                 
                 #print('move: ',move)
@@ -185,31 +185,31 @@ def make_move_from_speech(transcript, board):
             na = re.search(regularnum[i], command[0])
             nb = re.search(regularnum[i], command[1])
             try:
-                print(a.group(0))
+                letFirst = a.group(0)
                 letFirst = letterax[i]
             except AttributeError:
                 pass
 
             try:
-                print(na.group(0))
+                numFirst = na.group(0)
                 numFirst = numax[i]
             except AttributeError:
                 pass
 
             try:
-                print(b.group(0))
+                letSecond = b.group(0)
                 letSecond = letterax[i]
             except AttributeError:
                 pass
 
             try:
-                print(nb.group(0))
+                numSecond = nb.group(0)
                 numSecond = numax[i]
             except AttributeError:
                 pass
         try:
             if prom_fig != 0:
-                return board.parse_uci(letFirst + numFirst + letSecond + numSecond + prom_fig)
+                return board.parse_uci(letFirst + numFirst + letSecond + numSecond + '=' + prom_fig)
             return board.parse_uci(letFirst + numFirst + letSecond + numSecond)
         except UnboundLocalError:
             #print("1: nie wykryto prawidlowego ruchu \nproszę spróbować ponownie")
