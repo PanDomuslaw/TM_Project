@@ -1,0 +1,17 @@
+id_aes128_CCM
+rfc5280
+CCMParameters
+id_aes256_CCM
+id_aes192_CCM
+constraint
+namedtype
+id_aes256_GCM
+_algorithmIdentifierMapUpdate
+AES_GCM_ICVlen
+id_aes192_GCM
+univ
+GCMParameters
+id_aes128_GCM
+aes
+_OID
+AES_CCM_ICVlen

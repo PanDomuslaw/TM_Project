@@ -1,0 +1,7 @@
+CouldntDecodeError
+CouldntEncodeError
+MissingAudioParameter
+InvalidDuration
+TooManyMissingFrames
+InvalidTag
+InvalidID3TagVersion

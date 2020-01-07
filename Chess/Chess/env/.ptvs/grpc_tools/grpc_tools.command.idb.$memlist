@@ -1,0 +1,7 @@
+protoc
+pkg_resources
+build_package_protos
+setuptools
+BuildPackageProtos
+os
+sys

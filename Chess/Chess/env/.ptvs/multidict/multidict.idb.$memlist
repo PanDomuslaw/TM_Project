@@ -1,0 +1,17 @@
+__all__
+upstr
+MultiMapping
+__version__
+MutableMultiMapping
+USE_CYTHON_EXTENSIONS
+_compat
+_multidict
+_multidict_py
+CIMultiDictProxy
+MultiDictProxy
+_abc
+MultiDict
+istr
+_multidict_base
+CIMultiDict
+_istr

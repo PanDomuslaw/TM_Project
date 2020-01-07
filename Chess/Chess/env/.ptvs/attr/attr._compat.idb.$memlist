@@ -1,0 +1,17 @@
+sys
+ReadOnlyDict
+iteritems
+PY2
+types
+IterableUserDict
+make_set_closure_cell
+OrderedDict
+set_closure_cell
+PYPY
+TYPE
+ordered_dict
+metadata_proxy
+warnings
+platform
+just_warn
+isclass

@@ -1,0 +1,8 @@
+SpeechHelpers
+enums
+types
+SpeechClient
+proto
+speech_client
+__all__
+gapic

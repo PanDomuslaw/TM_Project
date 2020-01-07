@@ -1,0 +1,6 @@
+standard_library
+ContentTooShortError
+urllib_response
+HTTPError
+__all__
+URLError

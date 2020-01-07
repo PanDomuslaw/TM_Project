@@ -1,0 +1,9 @@
+StdoutRefactoringTool
+warn
+refactor
+fix_names
+optparse
+logging
+main
+sys
+__version__

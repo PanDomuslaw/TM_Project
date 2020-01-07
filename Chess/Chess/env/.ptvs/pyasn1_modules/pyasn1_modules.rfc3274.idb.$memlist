@@ -1,0 +1,10 @@
+id_alg_zlibCompress
+id_ct_compressedData
+cpa_zlibCompress
+_cmsContentTypesMapUpdate
+CompressedData
+CompressionAlgorithmIdentifier
+rfc5280
+rfc5652
+univ
+namedtype

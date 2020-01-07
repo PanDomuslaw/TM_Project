@@ -1,0 +1,11 @@
+get_frozen_object
+find_module
+os
+get_module
+C_EXTENSION
+C_BUILTIN
+importlib
+PY_FROZEN
+PY_SOURCE
+module_from_spec
+PY_COMPILED

@@ -1,0 +1,10 @@
+_FAILEDTELL
+rewind_body
+set_file_position
+b
+_unused_module_brotli
+ACCEPT_ENCODING
+integer_types
+make_headers
+b64encode
+UnrewindableBodyError

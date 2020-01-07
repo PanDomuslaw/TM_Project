@@ -1,0 +1,12 @@
+_cmsAttributesMapUpdate
+aa_cmsAlgorithmProtection
+SignatureAlgorithmIdentifier
+namedtype
+CMSAlgorithmProtection
+id_aa_cmsAlgorithmProtect
+DigestAlgorithmIdentifier
+tag
+rfc5652
+univ
+MessageAuthenticationCodeAlgorithm
+constraint

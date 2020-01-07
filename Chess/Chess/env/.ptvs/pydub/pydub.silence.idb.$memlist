@@ -1,0 +1,4 @@
+split_on_silence
+db_to_float
+detect_silence
+detect_nonsilent

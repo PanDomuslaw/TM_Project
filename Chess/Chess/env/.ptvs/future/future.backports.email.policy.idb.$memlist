@@ -1,0 +1,11 @@
+strict
+HeaderRegistry
+HTTP
+Policy
+_has_surrogates
+_extend_docstrings
+__all__
+default
+SMTP
+EmailPolicy
+super

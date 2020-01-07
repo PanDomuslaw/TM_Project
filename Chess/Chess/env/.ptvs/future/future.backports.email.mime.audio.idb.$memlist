@@ -1,0 +1,8 @@
+MIMEAudio
+__all__
+sndhdr
+MIMENonMultipart
+_whatsnd
+BytesIO
+_sndhdr_MIMEmap
+encoders

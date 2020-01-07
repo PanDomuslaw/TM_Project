@@ -1,0 +1,13 @@
+_GAPIC_LIBRARY_VERSION
+pkg_resources
+cloud_speech_pb2_grpc
+service_account
+speech_client_config
+warnings
+cloud_speech_pb2
+speech_grpc_transport
+enums
+operations_pb2
+SpeechClient
+grpc
+google

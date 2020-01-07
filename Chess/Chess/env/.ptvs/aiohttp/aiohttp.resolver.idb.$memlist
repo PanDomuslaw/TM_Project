@@ -1,0 +1,14 @@
+aiodns_default
+List
+Any
+Dict
+socket
+asyncio
+DefaultResolver
+AsyncResolver
+aiodns
+AbstractResolver
+__all__
+get_running_loop
+ThreadedResolver
+Optional

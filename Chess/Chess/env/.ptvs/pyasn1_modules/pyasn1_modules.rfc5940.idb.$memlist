@@ -1,0 +1,11 @@
+tag
+id_ri_ocsp_response
+univ
+SCVPReqRes
+_otherRevInfoFormatMapUpdate
+ContentInfo
+OCSPResponse
+rfc5652
+rfc2560
+namedtype
+id_ri_scvp

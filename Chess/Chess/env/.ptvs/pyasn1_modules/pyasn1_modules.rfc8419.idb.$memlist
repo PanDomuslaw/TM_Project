@@ -1,0 +1,15 @@
+id_Ed448
+rfc5280
+hashAlg_SHA_512
+id_shake256
+sigAlg_Ed448
+id_shake256_len
+id_Ed25519
+id_sha512
+hashAlgs
+univ
+_algorithmIdentifierMapUpdate
+hashAlg_SHAKE256
+sigAlg_Ed25519
+ShakeOutputLen
+hashAlg_SHAKE256_LEN

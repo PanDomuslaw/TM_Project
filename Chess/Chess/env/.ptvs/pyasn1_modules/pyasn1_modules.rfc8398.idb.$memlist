@@ -1,0 +1,10 @@
+id_on_SmtpUTF8Mailbox
+rfc5280
+id_pkix
+on_SmtpUTF8Mailbox
+SmtpUTF8Mailbox
+char
+MAX
+constraint
+id_on
+_anotherNameMapUpdate

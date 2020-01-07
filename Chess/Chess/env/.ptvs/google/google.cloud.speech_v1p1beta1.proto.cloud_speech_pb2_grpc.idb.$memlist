@@ -1,0 +1,6 @@
+grpc
+SpeechServicer
+google_dot_longrunning_dot_operations__pb2
+SpeechStub
+add_SpeechServicer_to_server
+google_dot_cloud_dot_speech__v1p1beta1_dot_proto_dot_cloud__speech__pb2

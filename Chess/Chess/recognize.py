@@ -4,6 +4,8 @@ from dictation.service.dictation_settings import DictationSettings
 from dictation.service.streaming_recognizer import StreamingRecognizer
 import re
 import chess
+import wave
+import pyaudio
 
 
 def recognize_speech():
@@ -14,6 +16,7 @@ def recognize_speech():
             recognizer = StreamingRecognizer(args.address, settings)
             print('Recognizing...')
             results = recognizer.recognize(stream)
+            #print(stream.data)
             return results[0]["transcript"]
 
 def recognize_move(transcript):
@@ -37,25 +40,25 @@ def recognize_move(transcript):
         na = re.search(regularnum[i], command[0])
         nb = re.search(regularnum[i], command[1])
         try:
-            print(a.group(0))
+            #print(a.group(0))
             letFirst = letterax[i]
         except AttributeError:
             pass
 
         try:
-            print(na.group(0))
+            #print(na.group(0))
             numFirst = numax[i]
         except AttributeError:
             pass
 
         try:
-            print(b.group(0))
+            #print(b.group(0))
             letSecond = letterax[i]
         except AttributeError:
             pass
 
         try:
-            print(nb.group(0))
+            #print(nb.group(0))
             numSecond = numax[i]
         except AttributeError:
             pass
@@ -68,9 +71,7 @@ def make_move_from_speech(transcript, board):
     """
     trascript - text (string)
     board - chess.Board() object
-
     return: Move object or -1
-
     reacts both on figure names (if exact) or coordinates
     roszada (O-O)/(O-O-O): reacts on 'roszada' word. If both are legal return long first (O-O-O)
     promotion: search figure name after 'promocja' word.
@@ -101,7 +102,7 @@ def make_move_from_speech(transcript, board):
             try:
                 return board.parse_san('O-O')
             except ValueError:
-                print('nie można wykonać roszady')
+                #print('nie można wykonać roszady')
                 return -1
     except AttributeError:
         pass
@@ -112,7 +113,7 @@ def make_move_from_speech(transcript, board):
     promotion = re.split('promocja', transcript)
 
     if len(command) != 2:
-        print('nie wykryto słowa "na"\nproszę spróbować ponownie')
+        #print('nie wykryto słowa "na"\nproszę spróbować ponownie')
         return -1
     if len(promotion) == 2:
         print(command[0], ' ', command[1], 'promocja: ', promotion[1])

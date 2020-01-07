@@ -1,0 +1,12 @@
+evolve
+copy
+_asdict_anything
+has
+AttrsAttributeNotFoundError
+iteritems
+assoc
+astuple
+_obj_setattr
+fields
+asdict
+NOTHING

@@ -1,0 +1,14 @@
+PY3
+dialog
+messagebox
+ttk
+font
+tix
+constants
+scrolledtext
+dnd
+colorchooser
+commondialog
+simpledialog
+__future_module__
+filedialog

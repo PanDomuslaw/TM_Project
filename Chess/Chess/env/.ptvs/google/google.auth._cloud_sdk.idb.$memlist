@@ -1,0 +1,16 @@
+get_project_id
+_CONFIG_DIRECTORY
+google
+environment_vars
+os
+CLOUD_SDK_CLIENT_ID
+subprocess
+get_application_default_credentials_path
+get_config_path
+_WINDOWS_CONFIG_ROOT_ENV_VAR
+json
+_CLOUD_SDK_CONFIG_COMMAND
+_CREDENTIALS_FILENAME
+load_authorized_user_credentials
+_CLOUD_SDK_POSIX_COMMAND
+_CLOUD_SDK_WINDOWS_COMMAND

@@ -12,6 +12,7 @@
     <Name>Chess</Name>
     <RootNamespace>Chess</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,11 +25,15 @@
   <ItemGroup>
     <Compile Include="address_provider.py" />
     <Compile Include="Chess.py" />
+    <Compile Include="recognize.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="run_dictation.py" />
     <Compile Include="run_tts.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="addresses.json" />
+    <Content Include="front_end.html" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">

@@ -1,0 +1,14 @@
+operations_client
+enums
+pkg_resources
+SpeechClient
+path_template
+platform
+cloud_speech_pb2
+collections
+os
+oneof
+config
+json
+api_callable
+google

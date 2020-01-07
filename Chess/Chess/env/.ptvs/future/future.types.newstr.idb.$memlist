@@ -1,0 +1,12 @@
+__all__
+PY3
+BaseNewStr
+Iterable
+with_metaclass
+no
+isnewbytes
+newstr
+newobject
+issubset
+istext
+unicode

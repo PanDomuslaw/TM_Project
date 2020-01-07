@@ -1,6 +1,6 @@
 import pyaudio
 import queue
-
+import wave
 
 class MicrophoneStream(object):
     """Opens a recording stream as a generator yielding the audio chunks."""
@@ -56,7 +56,9 @@ class MicrophoneStream(object):
     def session_id(self):
         return "sarmata-pyclient-mic"
 
+    
     def generator(self):
+        final = []
         while not self.closed:
             # Use a blocking get() to ensure there's at least one chunk of
             # data, and stop iteration if the chunk is None, indicating the
@@ -75,6 +77,14 @@ class MicrophoneStream(object):
                     data.append(chunk)
                 except queue.Empty:
                     break
-
+            final.append(data[0])
+            #print(final)
             yield b''.join(data)
+        p = pyaudio.PyAudio()
+        wf = wave.open("player.wav", 'wb')
+        wf.setnchannels(1)
+        wf.setsampwidth(p.get_sample_size(pyaudio.paInt16))
+        wf.setframerate(16000)
+        wf.writeframes(b''.join(final))
+        wf.close()
 # [END audio_stream]

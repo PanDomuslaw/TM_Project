@@ -1,0 +1,16 @@
+sys
+PY_COMPILED
+Require
+extract_constant
+PY_SOURCE
+StrictVersion
+__all__
+py27compat
+_update_globals
+Bytecode
+contextlib
+marshal
+maybe_close
+get_module_constant
+find_module
+PY_FROZEN

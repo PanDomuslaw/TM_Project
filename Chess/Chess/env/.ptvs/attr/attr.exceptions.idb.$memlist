@@ -1,0 +1,7 @@
+FrozenInstanceError
+NotCallableError
+AttrsAttributeNotFoundError
+UnannotatedAttributeError
+PythonTooOldError
+NotAnAttrsClassError
+DefaultAlreadySetError

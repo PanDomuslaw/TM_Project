@@ -1,0 +1,14 @@
+collections
+__all__
+isbytes
+BaseNewInt
+PY3
+long
+newbytes
+isint
+native
+newint
+struct
+newobject
+istext
+with_metaclass

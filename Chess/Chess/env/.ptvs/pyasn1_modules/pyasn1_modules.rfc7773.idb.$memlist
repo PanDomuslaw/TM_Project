@@ -1,0 +1,12 @@
+id_eleg_ce
+rfc5280
+AuthenticationContext
+id_ce_authContext
+constraint
+e_legnamnden
+_certificateExtensionsMapUpdate
+char
+MAX
+univ
+AuthenticationContexts
+namedtype
