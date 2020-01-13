@@ -4,6 +4,8 @@ from dictation.service.dictation_settings import DictationSettings
 from dictation.service.streaming_recognizer import StreamingRecognizer
 import re
 import chess
+import wave
+import pyaudio
 
 
 def recognize_speech():
@@ -14,6 +16,7 @@ def recognize_speech():
             recognizer = StreamingRecognizer(args.address, settings)
             print('Recognizing...')
             results = recognizer.recognize(stream)
+            #print(stream.data)
             return results[0]["transcript"]
 
 def recognize_move(transcript):
@@ -37,25 +40,25 @@ def recognize_move(transcript):
         na = re.search(regularnum[i], command[0])
         nb = re.search(regularnum[i], command[1])
         try:
-            print(a.group(0))
+            #print(a.group(0))
             letFirst = letterax[i]
         except AttributeError:
             pass
 
         try:
-            print(na.group(0))
+            #print(na.group(0))
             numFirst = numax[i]
         except AttributeError:
             pass
 
         try:
-            print(b.group(0))
+            #print(b.group(0))
             letSecond = letterax[i]
         except AttributeError:
             pass
 
         try:
-            print(nb.group(0))
+            #print(nb.group(0))
             numSecond = numax[i]
         except AttributeError:
             pass
@@ -68,25 +71,23 @@ def make_move_from_speech(transcript, board):
     """
     trascript - text (string)
     board - chess.Board() object
-
     return: Move object or -1
-
     reacts both on figure names (if exact) or coordinates
     roszada (O-O)/(O-O-O): reacts on 'roszada' word. If both are legal return long first (O-O-O)
     promotion: search figure name after 'promocja' word.
     """
 
     figures_name = [r'kr[óo]la?', r'dam[ay]', r'hetmana?', r'kr[óo]low[aą]', r'goniec', r'laufe?ra?', r'k?o[ńn]i?e?',
-                   r'skocze?ka?', r'wie[żz][aęe]', r'pione?k?a?', r'jane?ka?']
-    figures_sign = ['K', 'Q', 'Q', 'Q', 'B', 'B', 'N', 'N', 'R', 'P', 'P']
+                   r'skocze?ka?', r'wie[żz][aęe]', r'pione?k?a?', r'jane?ka?', r'kierune?ka?u?']
+    figures_sign = ['K', 'Q', 'Q', 'Q', 'B', 'B', 'N', 'N', 'R', 'P', 'P', 'P']
 
     numax = []
     regularnum = [r'1', r'2', r'3', r'4', r'5', r'6', r'7', r'8']
     for i in range(1,9):
         numax.append(str(i))
 
-    regularICAO = [r'alfa', r'bra[vw]o', r'c[zh]ar[ln][iy]e?', r'delta', r'ec?ho', r'fox?k?s?trot?', r'golf?', r'hotel?']
-    letterax = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    regularICAO = [r'alfa', r'[bp]ra[vw]o', r'c[zh]ar[ln][iyo]e?', r'tarli', r'delta', r'ec?ho', r'fox?k?s?trot?', r'golf?', r'hotel?']
+    letterax = ['a', 'b', 'c', 'c', 'd', 'e', 'f', 'g', 'h']
 
     # reakcja na słowo 'roszada'
     rosz = 0
@@ -101,7 +102,7 @@ def make_move_from_speech(transcript, board):
             try:
                 return board.parse_san('O-O')
             except ValueError:
-                print('nie można wykonać roszady')
+                #print('nie można wykonać roszady')
                 return -1
     except AttributeError:
         pass
@@ -112,7 +113,7 @@ def make_move_from_speech(transcript, board):
     promotion = re.split('promocja', transcript)
 
     if len(command) != 2:
-        print('nie wykryto słowa "na"\nproszę spróbować ponownie')
+        #print('nie wykryto słowa "na"\nproszę spróbować ponownie')
         return -1
     if len(promotion) == 2:
         print(command[0], ' ', command[1], 'promocja: ', promotion[1])
